@@ -1,4 +1,4 @@
-# Marina Cove Web Application
+# Mayhem Basketball Web Application
 
 This is an application starting point that is fully configured with the following:
 
@@ -23,8 +23,6 @@ This is an application starting point that is fully configured with the followin
 ## Configuring React
 The client of this app was built using [create-react-app](https://github.com/facebook/create-react-app). It comes complete with react router for easy page/component navigation. In order to get started, modify the routes in `client/components/App.js`. A home page component has already been created as a template, as well as a 404 page. 
 
-## Configuring Redux
-The redux store is configured in `client/tools/store.js`. Thunk middleware has been added as well as a router and form reducer. All reducers are stored in `client/reducers` and actions are stored in `client/actions`. A template has already been created for these as well. 
 
 ## Configuring a Database
 You need to configure the database URL found in `/config/index.json`. If you're using an online source like mLab, just paste the access URL in the file.
