@@ -1,3 +1,3 @@
 {
-  "dbUri": "mongodb://localhost:27017/crypto-dev" 
+  "dbUri": "mongodb://localhost:27017/mayhem-dev" 
 }
