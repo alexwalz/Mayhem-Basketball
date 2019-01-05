@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import { Button, Icon } from 'semantic-ui-react'
 
+
 class ExpiredLink extends Component {
 	constructor(props) {
       super(props);
@@ -20,7 +21,7 @@ class ExpiredLink extends Component {
 
       return ( 
 
-          <div style={{height: "100vh", backgroundColor: "#EF1B36", color: "white"}}>
+          <div style={{height: "100vh", backgroundColor: "#3261D6", color: "white"}}>
           
           <div className='login-page-home-link'><Link to='/' style={{color: 'white'}}><Icon disabled name='arrow left' />Back to Home</Link></div>
           
@@ -30,7 +31,7 @@ class ExpiredLink extends Component {
               <p style={{fontSize: '1.5rem', color: '#1E1E1E', width: "70%"}}>Your password reset link has expired.  Please generate a new link by sending yourself a new email.</p>
              
              
-              <Button style={{marginTop: "20px"}} href='/forgot-password'>Generate New Link</Button>
+              <Link to='/forgot-password'><Button style={{marginTop: "20px"}}>Generate New Link</Button></Link>
             
             </div>
           </div>

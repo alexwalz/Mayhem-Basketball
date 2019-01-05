@@ -112,7 +112,7 @@ class ResetPassword extends Component {
 
       return ( 
 
-          <div style={{height: "100vh", backgroundColor: "#EF1B36", color: "white"}}>
+          <div style={{height: "100vh", backgroundColor: "#3261D6", color: "white"}}>
           
           <div className='login-page-home-link'><Link to='/' style={{color: 'white'}}><Icon disabled name='arrow left' />Back to Home</Link></div>
           

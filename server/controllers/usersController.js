@@ -82,7 +82,7 @@ module.exports = {
         let hash = Math.random().toString(36).slice(2)
 
         db
-        .findOneAndUpdate({username: req.body.username}, {resetPasswordHash: hash})
+        .findOneAndUpdate({email: req.body.email}, {resetPasswordHash: hash})
 
         .then(dbModel => {
 

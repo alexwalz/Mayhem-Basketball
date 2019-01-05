@@ -36,7 +36,7 @@ export default class Navigation extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu stackable style={{position: "fixed", top: "0", left: "0", width: "100%"}}>
+      <Menu stackable >
         <Menu.Item>
           <img alt='label' src='https://react.semantic-ui.com/logo.png' />
         </Menu.Item>
@@ -49,13 +49,6 @@ export default class Navigation extends Component {
           Blog
         </Menu.Item>
 
-        <Menu.Item
-          name='testimonials'
-          active={activeItem === 'testimonials'}
-          onClick={this.handleItemClick}
-        >
-          Services
-        </Menu.Item>
 
         <Menu.Item
           name='about'
@@ -76,10 +69,10 @@ export default class Navigation extends Component {
 
         {this.state.authenticated ? null :
         <Menu.Item position='right'>
-                <Button icon labelPosition='left' href='/login'  style={{backgroundColor: "#EF1B36", color: "white"}}>
+                <Link to='/login'><Button icon labelPosition='left' style={{backgroundColor: "#3261D6", color: "white"}}>
                     <Icon name='arrow right' />
                     Login
-                </Button>
+                </Button></Link>
         </Menu.Item>
         }
 

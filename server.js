@@ -41,12 +41,14 @@ app.use(cors({
 const apiRoutes             = require('./server/routes/api-routes');
 const apiRoutesUsers        = require('./server/routes/api-users');
 const apiRoutesAuth         = require('./server/routes/api-auth');
+const apiRoutesPlayers      = require('./server/routes/api-players');
 
 
 
 app.use('/api', apiRoutes);
 app.use('/api/users', apiRoutesUsers);
 app.use('/api/auth', apiRoutesAuth);
+app.use('/api/players', apiRoutesPlayers);
 
 
 

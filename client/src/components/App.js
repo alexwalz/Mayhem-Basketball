@@ -6,6 +6,7 @@ import Login from './auth/login/View'
 import Signup from './auth/signup/View'
 import { Route, withRouter, Switch } from "react-router-dom";
 import Profile from './dashboard/profile/View'
+import Players from './dashboard/players/View'
 import ConfirmPage from './auth/confirm/View'
 import ForgotPasswordEmail from './global/forgotPassword/ForgotPasswordEmail'
 import ResetPassword from './global/forgotPassword/ResetPassword'
@@ -24,6 +25,7 @@ class App extends Component {
 
               {/* DASHBOARD ROUTES */}
               <Route path="/profile" component={Profile} />
+              <Route path="/players" component={Players} />
 
               {/* AUTH ROUTES */}
               <Route path="/login" exact component={Login} />

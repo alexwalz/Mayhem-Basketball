@@ -15,8 +15,8 @@ router.post('/signup', function(req, res) {
 
     let activeHash = Math.random().toString(36).slice(2)
 
-    if (!req.body.username || !req.body.password) {
-      res.json({success: false, msg: 'Please pass username and password.'});
+    if (!req.body.email || !req.body.password) {
+      res.json({success: false, msg: 'Please pass email and password.'});
     } else {
       var newUser = new User({
         firstName: req.body.firstName,
@@ -28,7 +28,6 @@ router.post('/signup', function(req, res) {
         state: req.body.state,
         zip: req.body.zip,
         role: "customer",
-        username: req.body.username,
         password: req.body.password,
         active: false,
         activeHash: activeHash
@@ -38,7 +37,7 @@ router.post('/signup', function(req, res) {
 
         if (err) {
           console.log(err)
-          return res.json({success: false, msg: 'Username already exists.'});
+          return res.json({success: false, msg: 'Email already exists.'});
         }
 
         try {
@@ -61,7 +60,7 @@ router.post('/signup', function(req, res) {
                     html: `<div>
                     <div style="height: 200px; background-color: #ef1b36; position: relative;">
                     <div style="margin: auto; text-align: center;">
-                    <h1 style="color: white; font-size: 2.5rem; padding-top: 70px;">New Website Name</h1>
+                    <h1 style="color: white; font-size: 2.5rem; padding-top: 70px;">Mayhem Basketball Club</h1>
                     </div>
                     </div>
                     <div style="padding: 20px;">
@@ -71,12 +70,10 @@ router.post('/signup', function(req, res) {
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
-                    <p>As always, if you have any questions, please feel free to contact us by calling&nbsp;<strong>(801) XXX-XXXX</strong></p>
                     </div>
                     <div style="margin-top: 60px;">
                     <div style="height: 100px; background-color: #1e1e1e; color: white; padding: 20px;">
-                    <p>New Website Name</p>
-                    <p>22 E 1500 S<br />American Fork, UT 84003<br />(801) XXX-XXXX</p>
+                    <p>Mayhem Basketball</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     </div>
@@ -106,7 +103,7 @@ router.post('/signup', function(req, res) {
 ////////   ROUTE FOR LOGGING IN A NEW USER ///////
   router.post('/login', function(req, res) {
     User.findOne({
-      username: req.body.username
+      email: req.body.email
     }, function(err, user) {
       if (err) throw err;
   

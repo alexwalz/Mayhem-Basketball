@@ -20,7 +20,7 @@ class Profile extends Component {
         var currentComponent = this
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
         axios.get('/api/users/authenticate').then(function(response){
-            console.log(response)
+            console.log(response.data)
             currentComponent.setState({authUser: response.data.authenticatedUser})
         }).catch(function(err){
           console.log(err)

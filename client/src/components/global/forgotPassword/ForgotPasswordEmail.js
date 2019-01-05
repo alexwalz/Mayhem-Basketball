@@ -7,7 +7,7 @@ class ForgotPasswordEmail extends Component {
 	constructor(props) {
       super(props);
       this.state={
-            username: '',
+            email: '',
             error: false,
             success: false,
             disabled: false
@@ -29,7 +29,7 @@ class ForgotPasswordEmail extends Component {
     submit=()=>{
       let currentComponent = this
       currentComponent.setState({error: false, success: false, disabled: true})
-      axios.post('api/users/forgot-password', {username: this.state.username}).then(function(response){
+      axios.post('api/users/forgot-password', {email: this.state.email}).then(function(response){
         
         if(response.data.success){
           currentComponent.setState({success: true})
@@ -46,7 +46,7 @@ class ForgotPasswordEmail extends Component {
       return(
           <Message negative style={{width: "70%", margin: "20px 0 20px 0"}}>
           <Message.Header>Error Finding User</Message.Header>
-              <p>We were unable to find a profile with the username that you supplied.</p>
+              <p>We were unable to find a profile with the Email that you supplied.</p>
           </Message>
       )
   }
@@ -65,7 +65,7 @@ class ForgotPasswordEmail extends Component {
 
       return ( 
 
-          <div style={{height: "100vh", backgroundColor: "#EF1B36", color: "white"}}>
+          <div style={{height: "100vh", backgroundColor: "#3261D6", color: "white"}}>
           
           <div className='login-page-home-link'><Link to='/' style={{color: 'white'}}><Icon disabled name='arrow left' />Back to Home</Link></div>
           
@@ -79,8 +79,8 @@ class ForgotPasswordEmail extends Component {
              
               <Form style={{width: "50%"}}>
               <Form.Field>
-                <label>Username</label>
-                <input placeholder='username' name='username' onChange={this.handleInputChange}/>
+                <label>Email</label>
+                <input placeholder='email' name='email' onChange={this.handleInputChange}/>
               </Form.Field>
               </Form>
              

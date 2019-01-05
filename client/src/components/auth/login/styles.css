@@ -1,5 +1,5 @@
 .login-page-container{
-    background: url('../../../images/lake1.jpg') no-repeat center center fixed; 
+    background: url('../../../images/basketball.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -38,11 +38,11 @@
     z-index: 999;
     width: 50%;
     padding: 5%;
-    color: #FB3668;
+    color: #3261D6;
   }
 
   .login-page-home-link a{
-    color: #FB3668;
+    color: #3261D6;
   }
   .login-page-home-link a:hover{
     color: white;

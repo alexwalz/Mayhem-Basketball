@@ -41,7 +41,7 @@ class LeftSidebar extends Component {
         return(
             <Sidebar as={Menu}  icon='labeled' inverted vertical visible width='thin'>
 
-                <Link to='/'><Menu.Item as='a' href='/' style={{backgroundColor: "#EF1B36"}}>
+                <Link to='/'><Menu.Item as='a' style={{backgroundColor: "#3261D6"}}>
                     <Icon name='home' />
                     Home
                 </Menu.Item></Link>
@@ -53,20 +53,13 @@ class LeftSidebar extends Component {
 
                 {this.state.authUser.role === 'admin' ? 
 
-                    <Link to='/profile/admin/users'><Menu.Item as='a' >
-                        <Label as='a' color='teal' ribbon style={{position: "absolute", marginLeft: "33px"}}>
-                            Admin
-                        </Label>
-                        <Icon name='user' />
-                        Admin Portal
+                    <Link to='/players'><Menu.Item as='a' >
+                        <Icon name='users' />
+                        Players
                     </Menu.Item></Link>
 
                 : null}
 
-                <Link to='/profile'><Menu.Item as='a' href='/'>
-                    <Icon name='user' />
-                    Profile
-                </Menu.Item></Link>
                 
             </Sidebar>
         )

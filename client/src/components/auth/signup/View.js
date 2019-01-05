@@ -3,6 +3,7 @@ import { Button, Form, Icon, Message, Loader } from 'semantic-ui-react'
 import React, { Component} from 'react'
 import './styles.css'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 
 
@@ -19,7 +20,6 @@ class LoginForm extends Component {
             state: "",
             zip: "",
             role: "customer",
-            username: "",
             password: "",
             confirmPassword: "",
             error: false,
@@ -68,7 +68,6 @@ class LoginForm extends Component {
             this.state.address !== '' &&
             this.state.city !== '' &&
             this.state.state !== '' &&
-            this.state.username !== '' &&
             this.state.password !== '' &&
             this.state.confirmPassword !== ''
         ){
@@ -87,8 +86,6 @@ class LoginForm extends Component {
 
         this.setState({
             submitting: true
-        }, function(){
-            console.log(this.state)
         })
 
         axios.post('api/auth/signup', this.state)
@@ -115,7 +112,7 @@ class LoginForm extends Component {
 
                 <div className='signup-form-container'>
 
-                    <div className='signup-page-home-link'><a href='/'><Icon disabled name='arrow left' />Back to Home</a></div>
+                    <div className='signup-page-home-link'><Link to='/'><Icon disabled name='arrow left' />Back to Home</Link></div>
 
                     <h1 style={{color: "white", fontSize: "2rem", textAlign: "center", padding: "5%"}}>New Account Creation</h1>
 
@@ -126,19 +123,19 @@ class LoginForm extends Component {
                         <Form.Group inline>
 
                             <Form.Field>
-                                <label style={{color: "#FB3668"}}>First Name</label>
+                                <label style={{color: "#3261D6"}}>First Name</label>
                                 <br/>
                                 <input onChange={this.handleInputChange} placeholder='John' name='firstName'/>
                             </Form.Field>
                             
                             <Form.Field>
-                                <label style={{color: "#FB3668"}}>Last Name</label>
+                                <label style={{color: "#3261D6"}}>Last Name</label>
                                 <br/>
                                 <input onChange={this.handleInputChange} placeholder='Doe' name='lastName'/>
                             </Form.Field>
 
                             <Form.Field>
-                                <label style={{color: "#FB3668"}}>Phone Number</label>
+                                <label style={{color: "#3261D6"}}>Phone Number</label>
                                 <br/>
                                 <input onChange={this.handleInputChange} placeholder='Doe' name='phoneNumber' />
                             </Form.Field>
@@ -146,66 +143,60 @@ class LoginForm extends Component {
                         </Form.Group>
 
                             <Form.Field>
-                                <label style={{color: "#FB3668"}}>Email</label>
+                                <label style={{color: "#3261D6"}}>Email</label>
                                 <input onChange={this.handleInputChange} placeholder='email@noreply.com' name='email' style={{width: "559px"}}/>
                             </Form.Field>
 
 
                         <Form.Field>
-                            <label style={{color: "#FB3668"}}>Address</label>
+                            <label style={{color: "#3261D6"}}>Address</label>
                             <input onChange={this.handleInputChange} placeholder='1234 Beck Street' name='address' style={{width: "559px"}}/>
                         </Form.Field>
 
                         <Form.Group inline>
 
                             <Form.Field>
-                                <label style={{color: "#FB3668"}}>City</label>
+                                <label style={{color: "#3261D6"}}>City</label>
                                 <br/>
                                 <input onChange={this.handleInputChange} placeholder='Salt Lake City'  name='city' />
                             </Form.Field>
 
                             <Form.Field>
-                                <label style={{color: "#FB3668"}}>State</label>
+                                <label style={{color: "#3261D6"}}>State</label>
                                 <br/>
                                 <input onChange={this.handleInputChange} placeholder='Utah' name='state' />
                             </Form.Field>
 
                             <Form.Field>
-                                <label style={{color: "#FB3668"}}>Zip Code</label>
+                                <label style={{color: "#3261D6"}}>Zip Code</label>
                                 <br/>
                                 <input onChange={this.handleInputChange} placeholder='84105' name='zip' />
                             </Form.Field>
 
                         </Form.Group>
 
-                        <Form.Group inline>
+                        <Form.Group>
 
                             <Form.Field>
-                                <label style={{color: "#FB3668"}}>Username</label>
-                                <br/>
-                                <input onChange={this.handleInputChange} placeholder='my_username'  name='username' />
-                            </Form.Field>
-
-                            <Form.Field>
-                                <label style={{color: "#FB3668"}}>Password</label>
+                                <label style={{color: "#3261D6"}}>Password</label>
                                 <input onChange={this.handleInputChange} placeholder='*********' type='password' name='password'/>
                             </Form.Field>
 
                             <Form.Field>
-                                <label style={{color: "#FB3668"}}>Confirm Password</label>
+                                <label style={{color: "#3261D6"}}>Confirm Password</label>
                                 <input onChange={this.handleInputChange} placeholder='*********' type='password' name='confirmPassword'/>
                             </Form.Field>
 
                         </Form.Group>
 
                         {this.state.submitting ? 
-                            <Button disabled={true} onClick={this.handleSubmit} type='submit' style={{backgroundColor: "#FB3668", color: "white", width: "100%", marginTop: "20px"}}><Loader size='big' inverted active />Creating Account</Button> 
+                            <Button disabled={true} onClick={this.handleSubmit} type='submit' style={{backgroundColor: "#3261D6", color: "white", width: "100%", marginTop: "20px"}}><Loader size='big' inverted active />Creating Account</Button> 
                             :
-                            <Button onClick={this.handleSubmit} disabled={this.state.formErrors} type='submit' style={{backgroundColor: "#FB3668", color: "white", width: "100%", marginTop: "20px"}}>Create Account</Button>
+                            <Button onClick={this.handleSubmit} disabled={this.state.formErrors} type='submit' style={{backgroundColor: "#3261D6", color: "white", width: "100%", marginTop: "20px"}}>Create Account</Button>
                         }
 
                         <br/>
-                        <p style={{color: "white", marginTop: "30px"}}>Already have an account? <a href='/login' style={{color: "#FB3668", paddingLeft: "9px"}}> Login Here</a></p>
+                        <p style={{color: "white", marginTop: "30px"}}>Already have an account? <Link to='/login' style={{color: "#3261D6", paddingLeft: "9px"}}> Login Here</Link></p>
                     </Form>
                 </div>
             </div>

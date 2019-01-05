@@ -1,0 +1,75 @@
+.page-3-container{
+    background-color: #E5E8EC;
+}
+
+.team-title{
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.team-subtitle{
+    font-size: 1.8rem;
+    margin-top: -10px;
+    color: #3261D6;
+}
+
+.page-3-section-1{
+    padding-top: 5%;
+}
+
+.page-3-section-2{
+    padding-top: 5%;
+}
+
+.player-card-container{
+    height: 500px;
+    max-width: 300px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0.75rem 3rem rgba(7,25,50,0.15);
+    border-radius: 3px;
+    transform-origin: 50% 0%;
+}
+
+.player-card-section-1{
+    height: 100px;
+    background-color: white;
+}
+
+.player-card-section-2{
+    height: 350px;
+    background-color: #F3F4F7;
+    padding: 70px 10px 10px 10px;
+}
+
+.player-card-section-3{
+    height: 50px;
+    background-color: white;
+}
+
+.player-card-picture{
+    border-radius: 999px;
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+    background-color: white;
+    border: 2px solid #F3F4F7;
+}
+
+.player-card-player-name{
+    font-size: 2rem;
+}
+
+.player-card-player-position{
+    margin-top: -10px;
+}
+
+.player-card-player-stats{
+    margin-top: 15px
+}
+
+

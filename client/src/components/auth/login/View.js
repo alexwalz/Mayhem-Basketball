@@ -3,6 +3,7 @@ import { Button, Form, Icon, Message, Loader } from 'semantic-ui-react'
 import React, { Component} from 'react'
 import './styles.css'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 
 
@@ -10,7 +11,7 @@ class LoginForm extends Component {
 	constructor(props) {
         super(props);
 		this.state={
-            username: "",
+            email: "",
             password: "",
             submitting: false,
             message: ""
@@ -67,16 +68,16 @@ class LoginForm extends Component {
 
             console.log(error)
 
-            this.setState({error: true, errMessage: 'Login failed. Username or password not match', submitting: false})
+            this.setState({error: true, errMessage: 'Login failed. Email or password not match', submitting: false})
 
             if(error.response.status === 401) {
               console.log(error)  
-              this.setState({ message: 'Login failed. Username or password not match' });
+              this.setState({ message: 'Login failed. Email or password not match' });
             }else if(error.response.status === 403){
                 console.log(error)  
-                this.setState({ message: 'You have not verified your email address.  Please check your email' });
+                this.setState({ message: 'You have not verified your Email address.  Please check your Email' });
             }else if(error.response.status === 400){
-                this.setState({message: "Authentication failed. Invalid Username."})
+                this.setState({message: "Authentication failed. Invalid Email."})
             }
 
           });
@@ -91,30 +92,30 @@ class LoginForm extends Component {
 
                 <div className='form-container'>
 
-                    <div className='login-page-home-link'><a href='/'><Icon disabled name='arrow left' />Back to Home</a></div>
+                    <div className='login-page-home-link'><Link to='/'><Icon disabled name='arrow left' />Back to Home</Link></div>
 
                     {this.state.error ? this.errorMessage() : null}
 
 
                     <Form>
                         <Form.Field>
-                        <label style={{color: "#FB3668"}}>Username</label>
-                        <input onChange={this.handleInputChange} placeholder='' name='username'/>
+                        <label style={{color: "#3261D6"}}>Email</label>
+                        <input onChange={this.handleInputChange} placeholder='' name='email'/>
                         </Form.Field>
                         <Form.Field>
-                        <label style={{color: "#FB3668"}}>Password</label>
+                        <label style={{color: "#3261D6"}}>Password</label>
                         <input onChange={this.handleInputChange} placeholder='*********' type='password' name='password'/>
                         </Form.Field>
 
                         {this.state.submitting ? 
-                            <Button type='submit' disabled={true} onClick={this.handleSubmit} style={{backgroundColor: "#FB3668", color: "white", width: "100%", marginTop: "20px"}}><Loader size='big' active inverted/>Logging In</Button>
+                            <Button type='submit' disabled={true} onClick={this.handleSubmit} style={{backgroundColor: "#3261D6", color: "white", width: "100%", marginTop: "20px"}}><Loader size='big' active inverted/>Logging In</Button>
                             :
-                            <Button type='submit' onClick={this.handleSubmit} style={{backgroundColor: "#FB3668", color: "white", width: "100%", marginTop: "20px"}}>Login</Button>
+                            <Button type='submit' onClick={this.handleSubmit} style={{backgroundColor: "#3261D6", color: "white", width: "100%", marginTop: "20px"}}>Login</Button>
                         }
                         
                         <br/>
-                        <p style={{color: "white", marginTop: "30px"}}>To create a new account <a href='/signup' style={{color: "#FB3668", paddingLeft: "9px"}}>Click Here</a></p>
-                        <p style={{color: "white", marginTop: "30px"}}>Forgot your password? <a href='/forgot-password' style={{color: "#FB3668", paddingLeft: "9px"}}>Click Here</a></p>
+                        <p style={{color: "white", marginTop: "30px"}}>To create a new account <Link to='/signup' style={{color: "#3261D6", paddingLeft: "9px"}}>Click Here</Link></p>
+                        <p style={{color: "white", marginTop: "30px"}}>Forgot your password? <Link to='/forgot-password' style={{color: "#3261D6", paddingLeft: "9px"}}>Click Here</Link></p>
                     </Form>
 
                 </div>

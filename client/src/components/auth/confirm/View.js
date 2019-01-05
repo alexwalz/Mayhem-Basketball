@@ -32,7 +32,7 @@ class ConfirmPage extends Component {
 
   render() {
     return (
-      <div className="not-found-page" style={{height: "100vh", backgroundColor: "#EF1B36", color: "white"}}>
+      <div className="not-found-page" style={{height: "100vh", backgroundColor: "#3261D6", color: "white"}}>
         <div className='not-found-page-content' style={{position: "fixed", top: "25%", left: "25%"}}>
           <h1 style={{color: 'white', fontSize: "5rem"}}>Thank You!</h1>
           <p style={{fontSize: '1.5rem', color: '#1E1E1E'}}>{this.state.message}</p>

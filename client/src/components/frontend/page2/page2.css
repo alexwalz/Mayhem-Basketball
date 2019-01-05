@@ -1,0 +1,49 @@
+.page-2-container{
+    height: 100%;
+}
+
+.page-2-section-1{
+    height: 50vh;
+    min-height: 300px;
+    background: url('../../../images/basketball.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.page-2-section-2{
+    height: 400px;
+    margin: -100px 15% 50px 15%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: rgba(49, 54, 56, 0.59) 0px 2px 8px 1px;
+    min-width: 1000px;
+    background: url('../../../images/cool-background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.championship-title{
+    padding-top: 5%;
+    color: #3C3C3C;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.championship-subtitle{
+    color: white;
+    font-size: 1.9rem
+}
+
+.championship-text{
+    color: white;
+    font-size: 1.2rem;
+    padding: 7%;
+}
+
+.page-2-section-3{
+    padding: 5%;
+}

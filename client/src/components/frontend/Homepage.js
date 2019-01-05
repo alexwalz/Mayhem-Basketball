@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Navbar from '../global/navigation/Navbar'
-import Page1 from './Page1'
+import './homepage.css'
+import Page1 from './page1/View'
+import Page2 from './page2/View'
+import Page3 from './page3/View'
 
 
 class HomePage extends Component {
@@ -34,10 +36,12 @@ class HomePage extends Component {
 
 
   render() {
+
     return (
-      <div className="App">
-        <Navbar/>
-        <Page1/>
+      <div className="App homepage">
+            <Page1/>
+            <Page2/>
+            <Page3/>
       </div>
     );
   }

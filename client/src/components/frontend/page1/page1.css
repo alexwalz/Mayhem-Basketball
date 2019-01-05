@@ -1,0 +1,20 @@
+.page-1-container{
+    height: 60vh;
+}
+
+
+.banner-text{
+    padding-top: 15%
+}
+
+.banner-title{
+    font-weight: 700;
+    font-size: 5rem;
+    color: #383838;
+}
+
+.banner-subtitle{
+    font-size: 2rem;
+    padding-top: 35px;
+    color: lightgrey
+}
