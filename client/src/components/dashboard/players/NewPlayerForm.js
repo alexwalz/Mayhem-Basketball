@@ -2,6 +2,7 @@
 import { Button, Form, Segment, Container, Message, Loader } from 'semantic-ui-react'
 import React, { Component} from 'react'
 import axios from 'axios'
+import AWSfileUpload from './awsFileUpload'
 import {Link} from 'react-router-dom'
 
 
@@ -139,6 +140,8 @@ class NewPlayerForm extends Component {
                         <br/>
                         <input onChange={this.handleInputChange} placeholder='https://' name='image'/>
                     </Form.Field>
+
+                    <AWSfileUpload />
 
 
 
