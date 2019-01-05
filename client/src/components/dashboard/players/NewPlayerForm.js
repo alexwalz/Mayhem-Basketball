@@ -153,6 +153,7 @@ class NewPlayerForm extends Component {
         </Container>
 
         
+
                 
         )
     }
