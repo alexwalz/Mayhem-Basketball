@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 
 //////////////////// AWS FILE UPLOADS //////////////////////
 
+  
 // configure the keys for accessing AWS
 AWS.config.update({
     accessKeyId: process.env.AWS_KEY,
@@ -42,7 +43,7 @@ AWS.config.update({
     const params = {
       ACL: 'public-read',
       Body: buffer,
-      Bucket: 'club-mayhem',
+      Bucket: process.env.S3_BUCKET,
       ContentType: type.mime,
       Key: `${name}.${type.ext}`
     };
@@ -67,6 +68,7 @@ AWS.config.update({
           return response.status(400).send(error);
         }
       });
+
   });
 
   ////////////////////  END OF AWS FILE UPLOADS //////////////////////
