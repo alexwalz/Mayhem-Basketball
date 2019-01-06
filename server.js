@@ -78,6 +78,8 @@ AWS.config.update({
 var allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:5000',
+    'https://mayhem-basketball.herokuapp.com',
+    'http://mayhem-basketball.herokuapp.com'
 ];
 
 
