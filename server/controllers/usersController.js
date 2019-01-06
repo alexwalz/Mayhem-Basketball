@@ -104,13 +104,13 @@ module.exports = {
                             }
                         });
         
-                        let resetLink =`http://localhost:3000/password-reset/${hash}`
+                        let resetLink =`https://mayhem-basketball.herokuapp.com/password-reset/${hash}`
                         let mailOptions = {
                             from: `"Mayhem Basketball" <marinacovestorageutah@gmail.com>`, // sender address
                             to: `${dbModel.email}`, // list of receivers
                             subject: 'Password Reset!', // Subject line
                             html: `<div>
-                            <div style="height: 200px; background-color: #ef1b36; position: relative;">
+                            <div style="height: 200px; background-color: #3261D6; position: relative;">
                             <div style="margin: auto; text-align: center;">
                             <h1 style="color: white; font-size: 2.5rem; padding-top: 70px;">Mayhem Basketball</h1>
                             </div>

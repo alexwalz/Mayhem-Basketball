@@ -52,13 +52,13 @@ router.post('/signup', function(req, res) {
                     }
                 });
 
-                let resetLink =`http://localhost:3000/confirm/${newUser.activeHash}`
+                let resetLink =`https://mayhem-basketball.herokuapp.com/confirm/${newUser.activeHash}`
                 let mailOptions = {
                     from: `"New User Account Created!" <marinacovestorageutah@gmail.com>`, // sender address
                     to: `${newUser.email}`, // list of receivers
                     subject: 'New Account Created!', // Subject line
                     html: `<div>
-                    <div style="height: 200px; background-color: #ef1b36; position: relative;">
+                    <div style="height: 200px; background-color: #3261D6; position: relative;">
                     <div style="margin: auto; text-align: center;">
                     <h1 style="color: white; font-size: 2.5rem; padding-top: 70px;">Mayhem Basketball Club</h1>
                     </div>
